@@ -11,6 +11,7 @@ from datetime import date, timedelta
 def _normalize(s: str) -> str:
     """Lowercase, remove commas, strip extra whitespace."""
     s = s.replace(",", " ").replace(".", " ")
+    s = re.sub(r"\bthe day\b", "1 day", s, flags=re.I)
     return re.sub(r"\s+", " ", s.lower().strip())
 
 
