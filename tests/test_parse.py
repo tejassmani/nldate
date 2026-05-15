@@ -1,5 +1,7 @@
 from datetime import date
+
 import pytest
+
 from nldate import parse
 
 TODAY = date(2025, 3, 15)  # Saturday
