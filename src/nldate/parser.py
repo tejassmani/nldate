@@ -180,7 +180,7 @@ def _try_iso(s: str, today: date) -> date | None:  # noqa: ARG001
 def _try_numeric_slash(s: str, today: date) -> date | None:  # noqa: ARG001
     s = s.strip()
     # YYYY/MM/DD
-    m = re.match(r"^(\d{4})/(\d{2})/(\d{2})$", s)
+    m = re.match(r"^(\d{4})/(\d{1,2})/(\d{1,2})$", s)
     if m:
         return date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
     # MM/DD/YYYY or MM/DD/YY
